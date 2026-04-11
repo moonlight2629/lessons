@@ -1,0 +1,1669 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Глава 16 · Религия как феномен культуры</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --crimson: #7b1c1c;
+  --crimson-light: #9e2a2a;
+  --gold: #b5870a;
+  --gold-light: #d4a017;
+  --cream: #fdf8f0;
+  --warm-white: #fff9f3;
+  --text: #1c0e0e;
+  --text-muted: #5a3e3e;
+  --border: #e8d5c4;
+  --shadow: rgba(100, 30, 30, 0.12);
+  --correct: #14532d;
+  --correct-bg: #dcfce7;
+  --wrong: #7f1d1d;
+  --wrong-bg: #fee2e2;
+  --neutral-bg: #f5ece0;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  min-height: 100vh;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23b5870a' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* ── HEADER ── */
+header {
+  background: linear-gradient(135deg, #4a0e0e 0%, #7b1c1c 50%, #4a0e0e 100%);
+  color: #fdf8f0;
+  padding: 36px 24px 28px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+header::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d4a017' fill-opacity='0.08'%3E%3Cpath d='M20 0 L40 20 L20 40 L0 20Z'/%3E%3C/g%3E%3C/svg%3E");
+}
+header h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(22px, 4vw, 32px);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  position: relative;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+header p {
+  font-size: 14px;
+  margin-top: 6px;
+  opacity: 0.8;
+  position: relative;
+}
+.header-ornament {
+  color: var(--gold-light);
+  font-size: 20px;
+  letter-spacing: 12px;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+/* ── STUDENT INFO ── */
+.student-bar {
+  background: white;
+  border-bottom: 3px solid var(--gold);
+  padding: 16px 24px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+.student-bar label { font-weight: 600; font-size: 14px; color: var(--text-muted); }
+.student-bar input {
+  flex: 1; min-width: 160px; padding: 8px 14px;
+  border: 2px solid var(--border); border-radius: 8px;
+  font-family: inherit; font-size: 14px; color: var(--text);
+  background: var(--cream); transition: border-color 0.2s;
+}
+.student-bar input:focus { outline: none; border-color: var(--gold); }
+
+/* ── MAIN LAYOUT ── */
+main { max-width: 860px; margin: 0 auto; padding: 28px 16px 60px; }
+
+/* ── TASK CARD ── */
+.task {
+  background: white;
+  border-radius: 14px;
+  padding: 24px 28px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 16px var(--shadow);
+  border-left: 5px solid var(--crimson);
+  transition: box-shadow 0.2s;
+}
+.task:hover { box-shadow: 0 4px 24px rgba(100,30,30,0.16); }
+.task-header {
+  display: flex; align-items: flex-start; gap: 14px;
+  margin-bottom: 16px;
+}
+.task-num {
+  background: var(--crimson);
+  color: white;
+  width: 36px; height: 36px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px; font-weight: 700;
+  flex-shrink: 0; margin-top: 2px;
+}
+.task-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px; font-weight: 600; color: var(--crimson);
+  line-height: 1.3;
+}
+.task-subtitle { font-size: 13px; color: var(--text-muted); margin-top: 3px; }
+
+/* ── STATEMENTS (TRUE/FALSE) ── */
+.stmt-list { display: flex; flex-direction: column; gap: 10px; }
+.stmt-item {
+  display: flex; align-items: flex-start; gap: 12px;
+  background: var(--neutral-bg); border-radius: 10px; padding: 12px 14px;
+}
+.stmt-text { flex: 1; font-size: 14.5px; line-height: 1.55; }
+.stmt-num { font-weight: 700; color: var(--gold); min-width: 20px; }
+.radio-group { display: flex; gap: 6px; flex-shrink: 0; }
+.radio-group label {
+  cursor: pointer; padding: 4px 11px; border-radius: 6px;
+  font-size: 13px; font-weight: 600;
+  border: 2px solid var(--border); background: white;
+  transition: all 0.15s;
+}
+.radio-group input[type=radio] { display: none; }
+.radio-group input[type=radio]:checked + label {
+  background: var(--crimson); color: white; border-color: var(--crimson);
+}
+
+/* ── MC OPTIONS ── */
+.mc-options { display: flex; flex-direction: column; gap: 8px; }
+.mc-option {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 10px 14px; border-radius: 9px;
+  border: 2px solid var(--border); cursor: pointer;
+  transition: all 0.15s; background: var(--warm-white);
+}
+.mc-option:hover { border-color: var(--gold); background: #fef9ec; }
+.mc-option input[type=radio] { display: none; }
+.mc-option.selected { border-color: var(--crimson); background: #fff0f0; }
+.mc-letter {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px; font-weight: 700; color: var(--crimson);
+  min-width: 20px;
+}
+.mc-text { font-size: 14.5px; line-height: 1.45; }
+
+/* ── TEXT WITH BLANKS ── */
+.blank-text { font-size: 15px; line-height: 2; color: var(--text); }
+.blank-input {
+  display: inline-block;
+  border: none; border-bottom: 2px solid var(--gold);
+  background: transparent; min-width: 120px; padding: 0 4px;
+  font-family: inherit; font-size: 14.5px; color: var(--crimson);
+  text-align: center; font-weight: 600;
+}
+.blank-input:focus { outline: none; border-bottom-color: var(--crimson); }
+.blank-hint { font-size: 12px; color: var(--text-muted); margin-top: 10px; }
+.word-bank {
+  display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px;
+  padding: 12px; background: var(--neutral-bg); border-radius: 10px;
+}
+.word-chip {
+  background: white; border: 2px solid var(--border);
+  border-radius: 20px; padding: 4px 12px;
+  font-size: 13px; font-weight: 600; color: var(--text-muted);
+}
+
+/* ── MATCHING ── */
+.match-grid { display: flex; flex-direction: column; gap: 8px; }
+.match-row {
+  display: grid; grid-template-columns: 1fr auto 1fr;
+  gap: 10px; align-items: center;
+  background: var(--neutral-bg); border-radius: 10px; padding: 10px 12px;
+}
+.match-left { font-size: 14px; font-weight: 600; color: var(--crimson); }
+.match-arrow { color: var(--gold); font-size: 18px; }
+.match-right { font-size: 13.5px; }
+.match-select {
+  width: 100%; padding: 7px 10px; border-radius: 8px;
+  border: 2px solid var(--border); background: white;
+  font-family: inherit; font-size: 13.5px; cursor: pointer;
+}
+.match-select:focus { outline: none; border-color: var(--gold); }
+
+/* ── CLASSIFY ── */
+.classify-items { display: flex; flex-direction: column; gap: 8px; }
+.classify-row {
+  display: grid; grid-template-columns: 1fr 180px;
+  gap: 10px; align-items: center;
+  background: var(--neutral-bg); border-radius: 10px; padding: 10px 14px;
+}
+.classify-desc { font-size: 14px; line-height: 1.45; }
+.classify-select {
+  padding: 7px 10px; border-radius: 8px;
+  border: 2px solid var(--border); background: white;
+  font-family: inherit; font-size: 13px; cursor: pointer;
+}
+
+/* ── ERROR TEXT ── */
+.error-text { font-size: 15px; line-height: 2; }
+.sentence {
+  display: inline;
+  padding: 2px 4px; border-radius: 4px;
+  cursor: pointer; transition: background 0.15s;
+}
+.sentence:hover { background: #fef3c7; }
+.sentence.marked { background: #fee2e2; border-bottom: 2px solid var(--crimson); }
+.error-hint { font-size: 12px; color: var(--text-muted); margin-top: 8px; }
+
+/* ── SEQUENCE / DRAG ── */
+.seq-list { display: flex; flex-direction: column; gap: 8px; }
+.seq-item {
+  display: flex; align-items: center; gap: 12px;
+  background: var(--neutral-bg); border-radius: 10px; padding: 10px 14px;
+  cursor: grab;
+}
+.seq-item.dragging { opacity: 0.4; }
+.seq-handle { color: var(--gold); font-size: 18px; cursor: grab; }
+.seq-num {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--crimson); color: white;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 13px; flex-shrink: 0;
+}
+.seq-text { font-size: 14px; flex: 1; }
+
+/* ── CROSSWORD ── */
+.crossword-wrap { overflow-x: auto; }
+table.cw {
+  border-collapse: collapse;
+  margin: 0 auto 20px;
+}
+table.cw td {
+  width: 34px; height: 34px;
+  padding: 0;
+}
+.cw-black { background: #2a1010; }
+.cw-cell {
+  background: white;
+  border: 1.5px solid #444;
+  position: relative;
+  vertical-align: top;
+}
+.cw-num {
+  position: absolute; top: 1px; left: 2px;
+  font-size: 9px; font-weight: 700; color: var(--crimson);
+  line-height: 1; pointer-events: none;
+}
+.cw-input {
+  position: absolute; inset: 0;
+  border: none; background: transparent;
+  text-align: center; font-weight: 700;
+  font-size: 16px; font-family: 'Cormorant Garamond', serif;
+  color: var(--text);
+  text-transform: uppercase;
+  padding-top: 8px;
+}
+.cw-input:focus { outline: none; background: #fef9ec; }
+.cw-input.cw-correct { background: var(--correct-bg) !important; color: var(--correct); }
+.cw-input.cw-wrong { background: var(--wrong-bg) !important; color: var(--wrong); }
+
+.cw-clues {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px 24px;
+  margin-top: 12px;
+}
+.cw-clue-group h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px; font-weight: 700; color: var(--crimson);
+  margin-bottom: 8px;
+}
+.cw-clue { font-size: 13.5px; line-height: 1.5; margin-bottom: 6px; }
+.cw-clue b { color: var(--crimson); }
+
+/* ── BUTTONS ── */
+.submit-zone {
+  text-align: center; margin-top: 32px; margin-bottom: 20px;
+}
+.btn-check {
+  background: linear-gradient(135deg, var(--crimson), #a02828);
+  color: white; border: none; border-radius: 50px;
+  padding: 16px 48px; font-size: 17px; font-weight: 700;
+  font-family: inherit; cursor: pointer;
+  box-shadow: 0 4px 20px rgba(123,28,28,0.35);
+  transition: all 0.2s;
+  letter-spacing: 0.02em;
+}
+.btn-check:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 28px rgba(123,28,28,0.45);
+}
+.btn-send {
+  background: var(--gold); color: white; border: none;
+  border-radius: 50px; padding: 12px 36px;
+  font-size: 15px; font-weight: 700; font-family: inherit;
+  cursor: pointer; margin-top: 12px;
+  transition: all 0.2s;
+  box-shadow: 0 2px 12px rgba(180, 130, 0, 0.3);
+}
+.btn-send:hover { background: #9a700a; }
+
+/* ── RESULTS ── */
+#results { display: none; margin-top: 32px; }
+.score-card {
+  background: linear-gradient(135deg, #4a0e0e, #7b1c1c);
+  color: white; border-radius: 20px; padding: 32px;
+  text-align: center; margin-bottom: 28px;
+  box-shadow: 0 8px 32px rgba(100,20,20,0.35);
+}
+.score-pct {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 72px; font-weight: 700; line-height: 1;
+  color: var(--gold-light);
+}
+.score-label { font-size: 14px; opacity: 0.8; margin-top: 4px; }
+.score-pts { font-size: 22px; margin-top: 12px; }
+.grade-badge {
+  display: inline-block; background: var(--gold); color: #1c0000;
+  border-radius: 50px; padding: 8px 28px; font-size: 20px; font-weight: 800;
+  margin-top: 14px; letter-spacing: 0.05em;
+}
+
+.feedback-list { display: flex; flex-direction: column; gap: 14px; }
+.fb-item {
+  border-radius: 12px; padding: 16px 20px;
+  display: flex; gap: 14px; align-items: flex-start;
+}
+.fb-item.ok { background: var(--correct-bg); border-left: 4px solid #16a34a; }
+.fb-item.bad { background: var(--wrong-bg); border-left: 4px solid #dc2626; }
+.fb-icon { font-size: 22px; flex-shrink: 0; }
+.fb-content {}
+.fb-title { font-weight: 700; font-size: 15px; margin-bottom: 4px; }
+.fb-title.ok { color: var(--correct); }
+.fb-title.bad { color: var(--wrong); }
+.fb-explain { font-size: 13.5px; line-height: 1.55; color: var(--text); }
+.fb-explain b { color: var(--crimson); }
+
+.send-confirm { text-align: center; padding: 14px; font-size: 14px; color: #065f46; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 580px) {
+  .task { padding: 18px 16px; }
+  .cw-clues { grid-template-columns: 1fr; }
+  .match-row { grid-template-columns: 1fr; }
+  .classify-row { grid-template-columns: 1fr; }
+}
+
+/* ── Подсветка после проверки ── */
+.stmt-item.chk-ok   { background: #d1fae5 !important; border-left: 3px solid #16a34a; }
+.stmt-item.chk-bad  { background: #fee2e2 !important; border-left: 3px solid #dc2626; }
+.mc-option.chk-ok   { background: #d1fae5 !important; border-color: #16a34a !important; }
+.mc-option.chk-bad  { background: #fee2e2 !important; border-color: #dc2626 !important; }
+.match-row.chk-ok   { background: #d1fae5 !important; }
+.match-row.chk-bad  { background: #fee2e2 !important; }
+.classify-row.chk-ok  { background: #d1fae5 !important; }
+.classify-row.chk-bad { background: #fee2e2 !important; }
+.blank-input.chk-ok  { border-bottom-color: #16a34a !important; background: #d1fae5 !important; color: #14532d !important; }
+.blank-input.chk-bad { border-bottom-color: #dc2626 !important; background: #fee2e2 !important; color: #7f1d1d !important; }
+.sentence.chk-ok  { background: #d1fae5 !important; border-bottom: 2px solid #16a34a !important; }
+.sentence.chk-bad { background: #fee2e2 !important; border-bottom: 2px solid #dc2626 !important; }
+.seq-item.chk-ok  { background: #d1fae5 !important; border-left: 4px solid #16a34a; }
+.seq-item.chk-bad { background: #fee2e2 !important; border-left: 4px solid #dc2626; }
+.cw-input.chk-ok  { background: #d1fae5 !important; color: #14532d !important; }
+.cw-input.chk-bad { background: #fee2e2 !important; color: #7f1d1d !important; }
+
+/* Блок комментария к неверному ответу */
+.wrong-comment {
+  margin-top: 8px; padding: 8px 12px;
+  background: #fff7ed; border-left: 3px solid var(--gold);
+  border-radius: 0 8px 8px 0;
+  font-size: 13px; line-height: 1.5; color: var(--text-muted);
+  display: none;
+}
+.wrong-comment.show { display: block; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-ornament">✦ · ✦ · ✦</div>
+  <h1>Глава 16 · Религия как феномен культуры<br>и социальный институт</h1>
+  <p>Тест-контроль · 20 заданий + кроссворд · Социология</p>
+</header>
+
+<div class="student-bar">
+  <label>Имя:</label>
+  <input type="text" id="stu-name" placeholder="Введите имя и фамилию">
+  <label>Класс / группа:</label>
+  <input type="text" id="stu-class" placeholder="11А">
+</div>
+
+<main>
+
+<!-- ══════════════ TASK 1 ══════════════ -->
+<div class="task" id="t1">
+  <div class="task-header">
+    <div class="task-num">1</div>
+    <div>
+      <div class="task-title">«Да» или «Нет»</div>
+      <div class="task-subtitle">Выберите ответ для каждого утверждения</div>
+    </div>
+  </div>
+  <div class="stmt-list">
+    <div class="stmt-item">
+      <span class="stmt-num">1.1</span>
+      <span class="stmt-text">Религия как социальный феномен с необходимостью предполагает наличие группы верующих.</span>
+      <div class="radio-group">
+        <input type="radio" name="s1" id="s1y" value="yes"><label for="s1y">Да</label>
+        <input type="radio" name="s1" id="s1n" value="no"><label for="s1n">Нет</label>
+      </div>
+    </div>
+    <div class="stmt-item">
+      <span class="stmt-num">1.2</span>
+      <span class="stmt-text">Буддизм является теистической религией, основанной на вере в единого Бога.</span>
+      <div class="radio-group">
+        <input type="radio" name="s2" id="s2y" value="yes"><label for="s2y">Да</label>
+        <input type="radio" name="s2" id="s2n" value="no"><label for="s2n">Нет</label>
+      </div>
+    </div>
+    <div class="stmt-item">
+      <span class="stmt-num">1.3</span>
+      <span class="stmt-text">Социологическое определение религии включает четыре признака: социальную группу, священные предметы, систему учений и совокупность ритуалов.</span>
+      <div class="radio-group">
+        <input type="radio" name="s3" id="s3y" value="yes"><label for="s3y">Да</label>
+        <input type="radio" name="s3" id="s3n" value="no"><label for="s3n">Нет</label>
+      </div>
+    </div>
+    <div class="stmt-item">
+      <span class="stmt-num">1.4</span>
+      <span class="stmt-text">Секта, в отличие от церкви, принимает и поддерживает господствующие нормы окружающего общества.</span>
+      <div class="radio-group">
+        <input type="radio" name="s4" id="s4y" value="yes"><label for="s4y">Да</label>
+        <input type="radio" name="s4" id="s4n" value="no"><label for="s4n">Нет</label>
+      </div>
+    </div>
+    <div class="stmt-item">
+      <span class="stmt-num">1.5</span>
+      <span class="stmt-text">Секуляризация — это процесс, в ходе которого религиозные идеи и организации утрачивают своё влияние на общество.</span>
+      <div class="radio-group">
+        <input type="radio" name="s5" id="s5y" value="yes"><label for="s5y">Да</label>
+        <input type="radio" name="s5" id="s5n" value="no"><label for="s5n">Нет</label>
+      </div>
+    </div>
+    <div class="stmt-item">
+      <span class="stmt-num">1.6</span>
+      <span class="stmt-text">Деноминация является промежуточной формой между сектой и церковью.</span>
+      <div class="radio-group">
+        <input type="radio" name="s6" id="s6y" value="yes"><label for="s6y">Да</label>
+        <input type="radio" name="s6" id="s6n" value="no"><label for="s6n">Нет</label>
+      </div>
+    </div>
+    <div class="stmt-item">
+      <span class="stmt-num">1.7</span>
+      <span class="stmt-text">К мировым религиям относятся христианство, ислам, буддизм и иудаизм.</span>
+      <div class="radio-group">
+        <input type="radio" name="s7" id="s7y" value="yes"><label for="s7y">Да</label>
+        <input type="radio" name="s7" id="s7n" value="no"><label for="s7n">Нет</label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ TASKS 2–8: ТЕСТЫ ══════════════ -->
+<div class="task" id="t2">
+  <div class="task-header">
+    <div class="task-num">2</div>
+    <div>
+      <div class="task-title">Тест: признаки религии</div>
+    </div>
+  </div>
+  <p style="font-size:14.5px;margin-bottom:12px;">Какой из перечисленных признаков вызвал наибольшую дискуссию среди социологов при формулировании определения религии?</p>
+  <div class="mc-options" id="mc2">
+    <label class="mc-option"><input type="radio" name="mc2" value="a"><span class="mc-letter">а)</span><span class="mc-text">Наличие группы верующих</span></label>
+    <label class="mc-option"><input type="radio" name="mc2" value="b"><span class="mc-letter">б)</span><span class="mc-text">Система учений</span></label>
+    <label class="mc-option"><input type="radio" name="mc2" value="c"><span class="mc-letter">в)</span><span class="mc-text">Вера в сверхъестественное</span></label>
+    <label class="mc-option"><input type="radio" name="mc2" value="d"><span class="mc-letter">г)</span><span class="mc-text">Наличие священных предметов</span></label>
+  </div>
+</div>
+
+<div class="task" id="t3">
+  <div class="task-header">
+    <div class="task-num">3</div>
+    <div><div class="task-title">Тест: Дюркгейм о религии</div></div>
+  </div>
+  <p style="font-size:14.5px;margin-bottom:12px;">Какую функцию религии Э. Дюркгейм считал важнейшей и наиболее универсальной?</p>
+  <div class="mc-options" id="mc3">
+    <label class="mc-option"><input type="radio" name="mc3" value="a"><span class="mc-letter">а)</span><span class="mc-text">Политическую (легитимация власти)</span></label>
+    <label class="mc-option"><input type="radio" name="mc3" value="b"><span class="mc-letter">б)</span><span class="mc-text">Интегративную (объединение общества)</span></label>
+    <label class="mc-option"><input type="radio" name="mc3" value="c"><span class="mc-letter">в)</span><span class="mc-text">Психотерапевтическую</span></label>
+    <label class="mc-option"><input type="radio" name="mc3" value="d"><span class="mc-letter">г)</span><span class="mc-text">Инновационную</span></label>
+  </div>
+</div>
+
+<div class="task" id="t4">
+  <div class="task-header">
+    <div class="task-num">4</div>
+    <div><div class="task-title">Тест: церковь vs секта</div></div>
+  </div>
+  <p style="font-size:14.5px;margin-bottom:12px;">Что принципиально отличает церковь от секты?</p>
+  <div class="mc-options" id="mc4">
+    <label class="mc-option"><input type="radio" name="mc4" value="a"><span class="mc-letter">а)</span><span class="mc-text">Наличие формальной бюрократической структуры</span></label>
+    <label class="mc-option"><input type="radio" name="mc4" value="b"><span class="mc-letter">б)</span><span class="mc-text">Тесная связь с обществом и принятие его господствующих норм</span></label>
+    <label class="mc-option"><input type="radio" name="mc4" value="c"><span class="mc-letter">в)</span><span class="mc-text">Вера в сверхъестественное</span></label>
+    <label class="mc-option"><input type="radio" name="mc4" value="d"><span class="mc-letter">г)</span><span class="mc-text">Наличие харизматического лидера</span></label>
+  </div>
+</div>
+
+<div class="task" id="t5">
+  <div class="task-header">
+    <div class="task-num">5</div>
+    <div><div class="task-title">Тест: секуляризация</div></div>
+  </div>
+  <p style="font-size:14.5px;margin-bottom:12px;">Что из перечисленного НЕ является фактором, способствующим секуляризации?</p>
+  <div class="mc-options" id="mc5">
+    <label class="mc-option"><input type="radio" name="mc5" value="a"><span class="mc-letter">а)</span><span class="mc-text">Развитие науки, заменяющей теологические объяснения</span></label>
+    <label class="mc-option"><input type="radio" name="mc5" value="b"><span class="mc-letter">б)</span><span class="mc-text">Усиление роли религии в системе образования</span></label>
+    <label class="mc-option"><input type="radio" name="mc5" value="c"><span class="mc-letter">в)</span><span class="mc-text">Отделение церкви от государства</span></label>
+    <label class="mc-option"><input type="radio" name="mc5" value="d"><span class="mc-letter">г)</span><span class="mc-text">Развитие светских учреждений, берущих на себя функции религии</span></label>
+  </div>
+</div>
+
+<div class="task" id="t6">
+  <div class="task-header">
+    <div class="task-num">6</div>
+    <div><div class="task-title">Тест: мировые религии</div></div>
+  </div>
+  <p style="font-size:14.5px;margin-bottom:12px;">Какой критерий позволяет отличить мировую религию от национальной?</p>
+  <div class="mc-options" id="mc6">
+    <label class="mc-option"><input type="radio" name="mc6" value="a"><span class="mc-letter">а)</span><span class="mc-text">Древность происхождения</span></label>
+    <label class="mc-option"><input type="radio" name="mc6" value="b"><span class="mc-letter">б)</span><span class="mc-text">Численность, распространённость и открытость для всех людей вне зависимости от происхождения</span></label>
+    <label class="mc-option"><input type="radio" name="mc6" value="c"><span class="mc-letter">в)</span><span class="mc-text">Наличие священных текстов</span></label>
+    <label class="mc-option"><input type="radio" name="mc6" value="d"><span class="mc-letter">г)</span><span class="mc-text">Государственная поддержка</span></label>
+  </div>
+</div>
+
+<div class="task" id="t7">
+  <div class="task-header">
+    <div class="task-num">7</div>
+    <div><div class="task-title">Тест: Маркс о религии</div></div>
+  </div>
+  <p style="font-size:14.5px;margin-bottom:12px;">Как К. Маркс характеризовал роль религии в обществе?</p>
+  <div class="mc-options" id="mc7">
+    <label class="mc-option"><input type="radio" name="mc7" value="a"><span class="mc-letter">а)</span><span class="mc-text">«Цемент общества» — главная интегрирующая сила</span></label>
+    <label class="mc-option"><input type="radio" name="mc7" value="b"><span class="mc-letter">б)</span><span class="mc-text">«Опиум народа» — иллюзорное счастье, маскирующее реальные проблемы</span></label>
+    <label class="mc-option"><input type="radio" name="mc7" value="c"><span class="mc-letter">в)</span><span class="mc-text">Двигатель капиталистического прогресса</span></label>
+    <label class="mc-option"><input type="radio" name="mc7" value="d"><span class="mc-letter">г)</span><span class="mc-text">Источник нравственности и морального прогресса</span></label>
+  </div>
+</div>
+
+<div class="task" id="t8">
+  <div class="task-header">
+    <div class="task-num">8</div>
+    <div><div class="task-title">Тест: деноминация</div></div>
+  </div>
+  <p style="font-size:14.5px;margin-bottom:12px;">Деноминация отличается от секты прежде всего тем, что:</p>
+  <div class="mc-options" id="mc8">
+    <label class="mc-option"><input type="radio" name="mc8" value="a"><span class="mc-letter">а)</span><span class="mc-text">Имеет меньше членов</span></label>
+    <label class="mc-option"><input type="radio" name="mc8" value="b"><span class="mc-letter">б)</span><span class="mc-text">Не имеет никакой формальной структуры</span></label>
+    <label class="mc-option"><input type="radio" name="mc8" value="c"><span class="mc-letter">в)</span><span class="mc-text">Не отвергает господствующих норм общества (является субкультурой, не контркультурой)</span></label>
+    <label class="mc-option"><input type="radio" name="mc8" value="d"><span class="mc-letter">г)</span><span class="mc-text">Всегда возглавляется харизматическим лидером</span></label>
+  </div>
+</div>
+
+<!-- ══════════════ TASK 9 ══════════════ -->
+<div class="task" id="t9">
+  <div class="task-header">
+    <div class="task-num">9</div>
+    <div>
+      <div class="task-title">Заполните пропуски</div>
+      <div class="task-subtitle">Вставьте нужное слово из банка слов</div>
+    </div>
+  </div>
+  <p class="blank-text">
+    Религиозная организация, тесно связанная с обществом и действующая внутри него, называется
+    <input class="blank-input" id="b1" placeholder="?"> (1).
+    Организация, отвергающая ценности окружающего общества, — это
+    <input class="blank-input" id="b2" placeholder="?"> (2).
+    Промежуточная между ними, устойчивая форма называется
+    <input class="blank-input" id="b3" placeholder="?"> (3).
+    Профессиональная прослойка священнослужителей внутри церкви — это
+    <input class="blank-input" id="b4" placeholder="?"> (4).
+    Процесс, в ходе которого религиозные идеи утрачивают влияние на общество, называется
+    <input class="blank-input" id="b5" placeholder="?"> (5).
+  </p>
+  <div class="word-bank">
+    <span class="word-chip">клир</span>
+    <span class="word-chip">деноминация</span>
+    <span class="word-chip">секта</span>
+    <span class="word-chip">церковь</span>
+    <span class="word-chip">секуляризация</span>
+    <span class="word-chip">экуменизм</span>
+  </div>
+</div>
+
+<!-- ══════════════ TASK 10 ══════════════ -->
+<div class="task" id="t10">
+  <div class="task-header">
+    <div class="task-num">10</div>
+    <div>
+      <div class="task-title">Соотнесите тип организации с характеристикой</div>
+      <div class="task-subtitle">Выберите соответствующее описание</div>
+    </div>
+  </div>
+  <div class="match-grid">
+    <div class="match-row">
+      <div class="match-left">Церковь</div>
+      <div class="match-arrow">→</div>
+      <select class="match-select" id="m10_1">
+        <option value="">— выберите —</option>
+        <option value="A">А. Контркультурная группа, возглавляемая харизматиком; принадлежность — достигаемый статус</option>
+        <option value="B">Б. Тесно связана с обществом; принадлежность — предписанный статус; часто младенческое крещение</option>
+        <option value="C">В. Субкультура, устойчивая форма; не претендует на универсализм; принимает господствующие нормы</option>
+        <option value="D">Г. Аморфная, постоянно изменяющаяся группа; может создавать новое учение</option>
+      </select>
+    </div>
+    <div class="match-row">
+      <div class="match-left">Секта</div>
+      <div class="match-arrow">→</div>
+      <select class="match-select" id="m10_2">
+        <option value="">— выберите —</option>
+        <option value="A">А. Контркультурная группа, возглавляемая харизматиком; принадлежность — достигаемый статус</option>
+        <option value="B">Б. Тесно связана с обществом; принадлежность — предписанный статус; часто младенческое крещение</option>
+        <option value="C">В. Субкультура, устойчивая форма; не претендует на универсализм; принимает господствующие нормы</option>
+        <option value="D">Г. Аморфная, постоянно изменяющаяся группа; может создавать новое учение</option>
+      </select>
+    </div>
+    <div class="match-row">
+      <div class="match-left">Деноминация</div>
+      <div class="match-arrow">→</div>
+      <select class="match-select" id="m10_3">
+        <option value="">— выберите —</option>
+        <option value="A">А. Контркультурная группа, возглавляемая харизматиком; принадлежность — достигаемый статус</option>
+        <option value="B">Б. Тесно связана с обществом; принадлежность — предписанный статус; часто младенческое крещение</option>
+        <option value="C">В. Субкультура, устойчивая форма; не претендует на универсализм; принимает господствующие нормы</option>
+        <option value="D">Г. Аморфная, постоянно изменяющаяся группа; может создавать новое учение</option>
+      </select>
+    </div>
+    <div class="match-row">
+      <div class="match-left">Культ</div>
+      <div class="match-arrow">→</div>
+      <select class="match-select" id="m10_4">
+        <option value="">— выберите —</option>
+        <option value="A">А. Контркультурная группа, возглавляемая харизматиком; принадлежность — достигаемый статус</option>
+        <option value="B">Б. Тесно связана с обществом; принадлежность — предписанный статус; часто младенческое крещение</option>
+        <option value="C">В. Субкультура, устойчивая форма; не претендует на универсализм; принимает господствующие нормы</option>
+        <option value="D">Г. Аморфная, постоянно изменяющаяся группа; может создавать новое учение</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ TASK 11 ══════════════ -->
+<div class="task" id="t11">
+  <div class="task-header">
+    <div class="task-num">11</div>
+    <div>
+      <div class="task-title">Соотнесите функцию религии с примером</div>
+    </div>
+  </div>
+  <div class="match-grid">
+    <div class="match-row">
+      <div class="match-left">Интегративная</div>
+      <div class="match-arrow">→</div>
+      <select class="match-select" id="m11_1">
+        <option value="">— выберите —</option>
+        <option value="A">А. Протестантская трудовая этика создала условия для развития западного капитализма (Вебер)</option>
+        <option value="B">Б. Совместное участие в ритуалах объединяет членов общины, создаёт солидарность</option>
+        <option value="C">В. Исповедь в христианстве помогает преодолеть вытесненные переживания</option>
+        <option value="D">Г. Религиозные нормы освящают нравственные предписания, регулируя поведение</option>
+        <option value="E">Д. Монастыри средневековой Европы сохраняли рукописи и передавали знания поколениям</option>
+      </select>
+    </div>
+    <div class="match-row">
+      <div class="match-left">Сохранения социального опыта</div>
+      <div class="match-arrow">→</div>
+      <select class="match-select" id="m11_2">
+        <option value="">— выберите —</option>
+        <option value="A">А. Протестантская трудовая этика создала условия для развития западного капитализма (Вебер)</option>
+        <option value="B">Б. Совместное участие в ритуалах объединяет членов общины, создаёт солидарность</option>
+        <option value="C">В. Исповедь в христианстве помогает преодолеть вытесненные переживания</option>
+        <option value="D">Г. Религиозные нормы освящают нравственные предписания, регулируя поведение</option>
+        <option value="E">Д. Монастыри средневековой Европы сохраняли рукописи и передавали знания поколениям</option>
+      </select>
+    </div>
+    <div class="match-row">
+      <div class="match-left">Социального контроля</div>
+      <div class="match-arrow">→</div>
+      <select class="match-select" id="m11_3">
+        <option value="">— выберите —</option>
+        <option value="A">А. Протестантская трудовая этика создала условия для развития западного капитализма (Вебер)</option>
+        <option value="B">Б. Совместное участие в ритуалах объединяет членов общины, создаёт солидарность</option>
+        <option value="C">В. Исповедь в христианстве помогает преодолеть вытесненные переживания</option>
+        <option value="D">Г. Религиозные нормы освящают нравственные предписания, регулируя поведение</option>
+        <option value="E">Д. Монастыри средневековой Европы сохраняли рукописи и передавали знания поколениям</option>
+      </select>
+    </div>
+    <div class="match-row">
+      <div class="match-left">Инновационная</div>
+      <div class="match-arrow">→</div>
+      <select class="match-select" id="m11_4">
+        <option value="">— выберите —</option>
+        <option value="A">А. Протестантская трудовая этика создала условия для развития западного капитализма (Вебер)</option>
+        <option value="B">Б. Совместное участие в ритуалах объединяет членов общины, создаёт солидарность</option>
+        <option value="C">В. Исповедь в христианстве помогает преодолеть вытесненные переживания</option>
+        <option value="D">Г. Религиозные нормы освящают нравственные предписания, регулируя поведение</option>
+        <option value="E">Д. Монастыри средневековой Европы сохраняли рукописи и передавали знания поколениям</option>
+      </select>
+    </div>
+    <div class="match-row">
+      <div class="match-left">Психологическая</div>
+      <div class="match-arrow">→</div>
+      <select class="match-select" id="m11_5">
+        <option value="">— выберите —</option>
+        <option value="A">А. Протестантская трудовая этика создала условия для развития западного капитализма (Вебер)</option>
+        <option value="B">Б. Совместное участие в ритуалах объединяет членов общины, создаёт солидарность</option>
+        <option value="C">В. Исповедь в христианстве помогает преодолеть вытесненные переживания</option>
+        <option value="D">Г. Религиозные нормы освящают нравственные предписания, регулируя поведение</option>
+        <option value="E">Д. Монастыри средневековой Европы сохраняли рукописи и передавали знания поколениям</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ TASK 12 ══════════════ -->
+<div class="task" id="t12">
+  <div class="task-header">
+    <div class="task-num">12</div>
+    <div>
+      <div class="task-title">Соотнесите понятие с определением</div>
+    </div>
+  </div>
+  <div class="match-grid">
+    <div class="match-row">
+      <div class="match-left">Секуляризация</div>
+      <div class="match-arrow">→</div>
+      <select class="match-select" id="m12_1">
+        <option value="">— выберите —</option>
+        <option value="A">А. Изменение религиозных верований и ритуалов как реакция на изменения в обществе</option>
+        <option value="B">Б. Стремление различных конфессий к сотрудничеству и объединению</option>
+        <option value="C">В. Процесс утраты религиозными идеями и организациями влияния на общество</option>
+        <option value="D">Г. Профессиональная прослойка священнослужителей внутри церковной организации</option>
+        <option value="E">Д. Особая личная сила лидера, признаваемая его последователями</option>
+      </select>
+    </div>
+    <div class="match-row">
+      <div class="match-left">Экуменизм</div>
+      <div class="match-arrow">→</div>
+      <select class="match-select" id="m12_2">
+        <option value="">— выберите —</option>
+        <option value="A">А. Изменение религиозных верований и ритуалов как реакция на изменения в обществе</option>
+        <option value="B">Б. Стремление различных конфессий к сотрудничеству и объединению</option>
+        <option value="C">В. Процесс утраты религиозными идеями и организациями влияния на общество</option>
+        <option value="D">Г. Профессиональная прослойка священнослужителей внутри церковной организации</option>
+        <option value="E">Д. Особая личная сила лидера, признаваемая его последователями</option>
+      </select>
+    </div>
+    <div class="match-row">
+      <div class="match-left">Модернизация</div>
+      <div class="match-arrow">→</div>
+      <select class="match-select" id="m12_3">
+        <option value="">— выберите —</option>
+        <option value="A">А. Изменение религиозных верований и ритуалов как реакция на изменения в обществе</option>
+        <option value="B">Б. Стремление различных конфессий к сотрудничеству и объединению</option>
+        <option value="C">В. Процесс утраты религиозными идеями и организациями влияния на общество</option>
+        <option value="D">Г. Профессиональная прослойка священнослужителей внутри церковной организации</option>
+        <option value="E">Д. Особая личная сила лидера, признаваемая его последователями</option>
+      </select>
+    </div>
+    <div class="match-row">
+      <div class="match-left">Клир</div>
+      <div class="match-arrow">→</div>
+      <select class="match-select" id="m12_4">
+        <option value="">— выберите —</option>
+        <option value="A">А. Изменение религиозных верований и ритуалов как реакция на изменения в обществе</option>
+        <option value="B">Б. Стремление различных конфессий к сотрудничеству и объединению</option>
+        <option value="C">В. Процесс утраты религиозными идеями и организациями влияния на общество</option>
+        <option value="D">Г. Профессиональная прослойка священнослужителей внутри церковной организации</option>
+        <option value="E">Д. Особая личная сила лидера, признаваемая его последователями</option>
+      </select>
+    </div>
+    <div class="match-row">
+      <div class="match-left">Харизма</div>
+      <div class="match-arrow">→</div>
+      <select class="match-select" id="m12_5">
+        <option value="">— выберите —</option>
+        <option value="A">А. Изменение религиозных верований и ритуалов как реакция на изменения в обществе</option>
+        <option value="B">Б. Стремление различных конфессий к сотрудничеству и объединению</option>
+        <option value="C">В. Процесс утраты религиозными идеями и организациями влияния на общество</option>
+        <option value="D">Г. Профессиональная прослойка священнослужителей внутри церковной организации</option>
+        <option value="E">Д. Особая личная сила лидера, признаваемая его последователями</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ TASK 13 ══════════════ -->
+<div class="task" id="t13">
+  <div class="task-header">
+    <div class="task-num">13</div>
+    <div><div class="task-title">Найдите лишнее понятие</div></div>
+  </div>
+  <p style="font-size:14.5px;margin-bottom:14px;">Из перечисленных понятий одно является лишним. Выберите его и объясните свой выбор ниже.</p>
+  <p style="font-size:15px;font-weight:600;margin-bottom:14px;color:var(--crimson);">Церковь · Секта · Деноминация · Культ · Семья · Клир</p>
+  <div class="mc-options" id="mc13">
+    <label class="mc-option"><input type="radio" name="mc13" value="a"><span class="mc-letter">а)</span><span class="mc-text">Церковь</span></label>
+    <label class="mc-option"><input type="radio" name="mc13" value="b"><span class="mc-letter">б)</span><span class="mc-text">Деноминация</span></label>
+    <label class="mc-option"><input type="radio" name="mc13" value="c"><span class="mc-letter">в)</span><span class="mc-text">Семья</span></label>
+    <label class="mc-option"><input type="radio" name="mc13" value="d"><span class="mc-letter">г)</span><span class="mc-text">Клир</span></label>
+  </div>
+</div>
+
+<!-- ══════════════ TASK 14 ══════════════ -->
+<div class="task" id="t14">
+  <div class="task-header">
+    <div class="task-num">14</div>
+    <div>
+      <div class="task-title">Найдите ошибки в тексте</div>
+      <div class="task-subtitle">В тексте три ошибки — нажмите на предложение, чтобы отметить его</div>
+    </div>
+  </div>
+  <p class="error-text">
+    <span class="sentence" id="sent1" onclick="toggleSent('sent1')" data-n="1">(1) Религия как социальный феномен предполагает наличие группы верующих, системы учений, священных предметов и совокупности ритуалов.</span>
+    <span class="sentence" id="sent2" onclick="toggleSent('sent2')" data-n="2"> (2) Церковь является контркультурной организацией, отвергающей нормы и ценности данного общества.</span>
+    <span class="sentence" id="sent3" onclick="toggleSent('sent3')" data-n="3"> (3) Секуляризация — это процесс, в ходе которого религиозные идеи и организации утрачивают своё влияние на общество.</span>
+    <span class="sentence" id="sent4" onclick="toggleSent('sent4')" data-n="4"> (4) Деноминация является промежуточной формой между сектой и государством.</span>
+    <span class="sentence" id="sent5" onclick="toggleSent('sent5')" data-n="5"> (5) Интегративная функция религии связана с объединением общества на основе общих верований и ритуалов.</span>
+    <span class="sentence" id="sent6" onclick="toggleSent('sent6')" data-n="6"> (6) К мировым религиям относятся христианство, ислам и буддизм.</span>
+    <span class="sentence" id="sent7" onclick="toggleSent('sent7')" data-n="7"> (7) Принадлежность к секте, как правило, является предписанным статусом, и крещение в сектах происходит в младенческом возрасте.</span>
+  </p>
+  <p class="error-hint">Выберите ровно 3 предложения с ошибками (выделенные красным)</p>
+</div>
+
+<!-- ══════════════ TASK 15 ══════════════ -->
+<div class="task" id="t15">
+  <div class="task-header">
+    <div class="task-num">15</div>
+    <div>
+      <div class="task-title">Классификация: определите тип религиозной организации</div>
+    </div>
+  </div>
+  <div class="classify-items">
+    <div class="classify-row">
+      <div class="classify-desc">«Организация насчитывает миллионы членов, тесно сотрудничает с государством; новорождённых принято крестить в детстве»</div>
+      <select class="classify-select" id="cl1">
+        <option value="">— выберите —</option>
+        <option value="A">Церковь</option><option value="B">Секта</option>
+        <option value="C">Деноминация</option><option value="D">Культ</option>
+      </select>
+    </div>
+    <div class="classify-row">
+      <div class="classify-desc">«Небольшая группа под руководством харизматичного лидера; члены порвали с прежними жизнью и окружением; строгий контроль вступления»</div>
+      <select class="classify-select" id="cl2">
+        <option value="">— выберите —</option>
+        <option value="A">Церковь</option><option value="B">Секта</option>
+        <option value="C">Деноминация</option><option value="D">Культ</option>
+      </select>
+    </div>
+    <div class="classify-row">
+      <div class="classify-desc">«Баптисты в России: имеют формальную структуру, принимают любого желающего, не претендуют на государственный статус»</div>
+      <select class="classify-select" id="cl3">
+        <option value="">— выберите —</option>
+        <option value="A">Церковь</option><option value="B">Секта</option>
+        <option value="C">Деноминация</option><option value="D">Культ</option>
+      </select>
+    </div>
+    <div class="classify-row">
+      <div class="classify-desc">«Группа собирается раз в месяц; участники могут принадлежать к другим религиям; строгих правил нет; учение постоянно меняется»</div>
+      <select class="classify-select" id="cl4">
+        <option value="">— выберите —</option>
+        <option value="A">Церковь</option><option value="B">Секта</option>
+        <option value="C">Деноминация</option><option value="D">Культ</option>
+      </select>
+    </div>
+    <div class="classify-row">
+      <div class="classify-desc">«Лютеранство в Германии: государственная религия, тесно вплетена в культуру, обязательного членства нет, но крещение — норма»</div>
+      <select class="classify-select" id="cl5">
+        <option value="">— выберите —</option>
+        <option value="A">Церковь</option><option value="B">Секта</option>
+        <option value="C">Деноминация</option><option value="D">Культ</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ TASK 16 ══════════════ -->
+<div class="task" id="t16">
+  <div class="task-header">
+    <div class="task-num">16</div>
+    <div>
+      <div class="task-title">Расставьте этапы в правильном порядке</div>
+      <div class="task-subtitle">Перетащите блоки, чтобы выстроить типичную эволюцию религиозной организации</div>
+    </div>
+  </div>
+  <div class="seq-list" id="seqList">
+    <div class="seq-item" draggable="true" data-val="denom" ondragstart="dragStart(event)" ondragover="dragOver(event)" ondrop="drop(event)">
+      <span class="seq-handle">⠿</span>
+      <div class="seq-num" id="sn_denom">?</div>
+      <div class="seq-text"><b>Деноминация</b> — формируется устойчивая структура, харизматический лидер умер или ушёл; организация принимает нормы общества</div>
+    </div>
+    <div class="seq-item" draggable="true" data-val="cult" ondragstart="dragStart(event)" ondragover="dragOver(event)" ondrop="drop(event)">
+      <span class="seq-handle">⠿</span>
+      <div class="seq-num" id="sn_cult">?</div>
+      <div class="seq-text"><b>Культ</b> — аморфная группа с новым учением, нет чёткой структуры, участники взаимодействуют с обществом</div>
+    </div>
+    <div class="seq-item" draggable="true" data-val="church" ondragstart="dragStart(event)" ondragover="dragOver(event)" ondrop="drop(event)">
+      <span class="seq-handle">⠿</span>
+      <div class="seq-num" id="sn_church">?</div>
+      <div class="seq-text"><b>Церковь</b> — организация обретает широкое признание, тесную связь с обществом и государством</div>
+    </div>
+    <div class="seq-item" draggable="true" data-val="sect" ondragstart="dragStart(event)" ondragover="dragOver(event)" ondrop="drop(event)">
+      <span class="seq-handle">⠿</span>
+      <div class="seq-num" id="sn_sect">?</div>
+      <div class="seq-text"><b>Секта</b> — культ радикализируется; харизматический лидер требует отречения от мирской жизни; закрытое сообщество</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ TASK 17 ══════════════ -->
+<div class="task" id="t17">
+  <div class="task-header">
+    <div class="task-num">17</div>
+    <div>
+      <div class="task-title">Заполните пропуски: мировые религии</div>
+    </div>
+  </div>
+  <p class="blank-text">
+    К трём мировым религиям относятся: <input class="blank-input" id="c1" placeholder="?"> (1),
+    <input class="blank-input" id="c2" placeholder="?"> (2) и
+    <input class="blank-input" id="c3" placeholder="?"> (3).
+    Иудаизм не является мировой религией, так как ориентирован на представителей определённого
+    <input class="blank-input" id="c4" placeholder="?"> (4)
+    и не соответствует критерию
+    <input class="blank-input" id="c5" placeholder="?"> (5).
+  </p>
+  <div class="word-bank">
+    <span class="word-chip">христианство</span>
+    <span class="word-chip">открытости</span>
+    <span class="word-chip">этноса</span>
+    <span class="word-chip">ислам</span>
+    <span class="word-chip">буддизм</span>
+    <span class="word-chip">секуляризации</span>
+  </div>
+</div>
+
+<!-- ══════════════ TASK 18 ══════════════ -->
+<div class="task" id="t18">
+  <div class="task-header">
+    <div class="task-num">18</div>
+    <div>
+      <div class="task-title">«Да» или «Нет»: мировые религии</div>
+    </div>
+  </div>
+  <div class="stmt-list">
+    <div class="stmt-item">
+      <span class="stmt-num">18.1</span>
+      <span class="stmt-text">Буддизм — самая многочисленная из мировых религий.</span>
+      <div class="radio-group">
+        <input type="radio" name="r18_1" id="r18_1y" value="yes"><label for="r18_1y">Да</label>
+        <input type="radio" name="r18_1" id="r18_1n" value="no"><label for="r18_1n">Нет</label>
+      </div>
+    </div>
+    <div class="stmt-item">
+      <span class="stmt-num">18.2</span>
+      <span class="stmt-text">Христианство, ислам и иудаизм относятся к авраамическим (библейским) религиям.</span>
+      <div class="radio-group">
+        <input type="radio" name="r18_2" id="r18_2y" value="yes"><label for="r18_2y">Да</label>
+        <input type="radio" name="r18_2" id="r18_2n" value="no"><label for="r18_2n">Нет</label>
+      </div>
+    </div>
+    <div class="stmt-item">
+      <span class="stmt-num">18.3</span>
+      <span class="stmt-text">Ислам возник раньше, чем христианство.</span>
+      <div class="radio-group">
+        <input type="radio" name="r18_3" id="r18_3y" value="yes"><label for="r18_3y">Да</label>
+        <input type="radio" name="r18_3" id="r18_3n" value="no"><label for="r18_3n">Нет</label>
+      </div>
+    </div>
+    <div class="stmt-item">
+      <span class="stmt-num">18.4</span>
+      <span class="stmt-text">Индуизм не является мировой религией, несмотря на большое число приверженцев.</span>
+      <div class="radio-group">
+        <input type="radio" name="r18_4" id="r18_4y" value="yes"><label for="r18_4y">Да</label>
+        <input type="radio" name="r18_4" id="r18_4n" value="no"><label for="r18_4n">Нет</label>
+      </div>
+    </div>
+    <div class="stmt-item">
+      <span class="stmt-num">18.5</span>
+      <span class="stmt-text">Лютеранство может быть одновременно церковью в одной стране и деноминацией в другой.</span>
+      <div class="radio-group">
+        <input type="radio" name="r18_5" id="r18_5y" value="yes"><label for="r18_5y">Да</label>
+        <input type="radio" name="r18_5" id="r18_5n" value="no"><label for="r18_5n">Нет</label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ TASK 19 ══════════════ -->
+<div class="task" id="t19">
+  <div class="task-header">
+    <div class="task-num">19</div>
+    <div>
+      <div class="task-title">Определите функцию религии</div>
+      <div class="task-subtitle">Выберите функцию, которую иллюстрирует каждое описание</div>
+    </div>
+  </div>
+  <div class="classify-items">
+    <div class="classify-row">
+      <div class="classify-desc">«После потери близкого человека участие в религиозных обрядах помогло семье принять утрату и преодолеть отчаяние»</div>
+      <select class="classify-select" id="f1">
+        <option value="">— функция —</option>
+        <option value="A">Интегративная</option><option value="B">Сохранения опыта</option>
+        <option value="C">Социального контроля</option><option value="D">Политическая</option>
+        <option value="E">Инновационная</option><option value="F">Психологическая</option>
+      </select>
+    </div>
+    <div class="classify-row">
+      <div class="classify-desc">«Монархи Средневековья получали короны из рук представителей высшего духовенства — религия освящала их власть»</div>
+      <select class="classify-select" id="f2">
+        <option value="">— функция —</option>
+        <option value="A">Интегративная</option><option value="B">Сохранения опыта</option>
+        <option value="C">Социального контроля</option><option value="D">Политическая</option>
+        <option value="E">Инновационная</option><option value="F">Психологическая</option>
+      </select>
+    </div>
+    <div class="classify-row">
+      <div class="classify-desc">«Дюркгейм: участники коллективного ритуала переживают приобщение к чему-то большему, чем они сами»</div>
+      <select class="classify-select" id="f3">
+        <option value="">— функция —</option>
+        <option value="A">Интегративная</option><option value="B">Сохранения опыта</option>
+        <option value="C">Социального контроля</option><option value="D">Политическая</option>
+        <option value="E">Инновационная</option><option value="F">Психологическая</option>
+      </select>
+    </div>
+    <div class="classify-row">
+      <div class="classify-desc">«Кальвинистская этика — рациональность, отношение к труду как богоугодной деятельности — создала условия для западного капитализма»</div>
+      <select class="classify-select" id="f4">
+        <option value="">— функция —</option>
+        <option value="A">Интегративная</option><option value="B">Сохранения опыта</option>
+        <option value="C">Социального контроля</option><option value="D">Политическая</option>
+        <option value="E">Инновационная</option><option value="F">Психологическая</option>
+      </select>
+    </div>
+    <div class="classify-row">
+      <div class="classify-desc">«Десять заповедей и религиозные нормы в Древней Греции стояли на страже правовых и нравственных предписаний»</div>
+      <select class="classify-select" id="f5">
+        <option value="">— функция —</option>
+        <option value="A">Интегративная</option><option value="B">Сохранения опыта</option>
+        <option value="C">Социального контроля</option><option value="D">Политическая</option>
+        <option value="E">Инновационная</option><option value="F">Психологическая</option>
+      </select>
+    </div>
+    <div class="classify-row">
+      <div class="classify-desc">«Монастыри средневековой Европы сохраняли рукописи, вели летописи и тем самым обеспечивали передачу знаний поколениям»</div>
+      <select class="classify-select" id="f6">
+        <option value="">— функция —</option>
+        <option value="A">Интегративная</option><option value="B">Сохранения опыта</option>
+        <option value="C">Социального контроля</option><option value="D">Политическая</option>
+        <option value="E">Инновационная</option><option value="F">Психологическая</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ TASK 20: КРОССВОРД ══════════════ -->
+<div class="task" id="t20">
+  <div class="task-header">
+    <div class="task-num">20</div>
+    <div>
+      <div class="task-title">Кроссворд</div>
+      <div class="task-subtitle">Заполните клетки — все слова из главы 16</div>
+    </div>
+  </div>
+  <div class="crossword-wrap">
+    <table class="cw" id="cwTable"></table>
+  </div>
+  <div class="cw-clues">
+    <div class="cw-clue-group">
+      <h4>→ По горизонтали</h4>
+      <div class="cw-clue"><b>2→</b> Совокупность учений и ритуалов, с помощью которых группа реагирует на то, что считает священным (7)</div>
+      <div class="cw-clue"><b>3→</b> Религиозная организация, тесно связанная с обществом и действующая внутри него (7)</div>
+      <div class="cw-clue"><b>5→</b> Правило, регламентирующее обращение со священными предметами и отношения внутри группы (6)</div>
+      <div class="cw-clue"><b>7→</b> Особая личная притягательность лидера, признаваемая его последователями (7)</div>
+      <div class="cw-clue"><b>9→</b> Стремление различных конфессий к сотрудничеству и объединению (9)</div>
+    </div>
+    <div class="cw-clue-group">
+      <h4>↓ По вертикали</h4>
+      <div class="cw-clue"><b>1↓</b> Религиозная организация, отвергающая ценности окружающего общества (5)</div>
+      <div class="cw-clue"><b>4↓</b> Количественный показатель; в социологии применяется для измерения уровня религиозности (6)</div>
+      <div class="cw-clue"><b>6↓</b> Наименее формализованный, аморфный тип религиозной организации (5)</div>
+      <div class="cw-clue"><b>8↓</b> Высшая форма этнической общности, связанная с гражданством (5)</div>
+      <div class="cw-clue"><b>10↓</b> Профессиональная прослойка священнослужителей внутри церковной организации (4)</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ SUBMIT ══════════════ -->
+<div class="submit-zone">
+  <button class="btn-check" onclick="checkAll()">✦ Проверить все ответы ✦</button>
+  <div id="sendMsg" style="display:none" class="send-confirm"></div>
+</div>
+
+<!-- ══════════════ RESULTS ══════════════ -->
+<div id="results">
+  <div class="score-card">
+    <div class="score-pct" id="resPct">0%</div>
+    <div class="score-label">правильных ответов</div>
+    <div class="score-pts" id="resPts">0 / 0 баллов</div>
+    <div class="grade-badge" id="resGrade">–</div>
+  </div>
+  <div class="feedback-list" id="feedbackList"></div>
+</div>
+
+</main>
+
+<script>
+// ════════════════════════════════════════════════
+//  CROSSWORD ENGINE
+// ════════════════════════════════════════════════
+const cwWords = [
+  {n:1, dir:'D', r:1, c:1, w:'СЕКТА'},
+  {n:2, dir:'A', r:2, c:0, w:'РЕЛИГИЯ'},
+  {n:3, dir:'A', r:6, c:0, w:'ЦЕРКОВЬ'},
+  {n:4, dir:'D', r:2, c:3, w:'ИНДЕКС'},
+  {n:5, dir:'A', r:9, c:4, w:'РИТУАЛ'},
+  {n:6, dir:'D', r:7, c:9, w:'КУЛЬТ'},
+  {n:7, dir:'A', r:12, c:0, w:'ХАРИЗМА'},
+  {n:8, dir:'D', r:9, c:3, w:'НАЦИЯ'},
+  {n:9, dir:'A', r:15, c:0, w:'ЭКУМЕНИЗМ'},
+  {n:10, dir:'D', r:15, c:1, w:'КЛИР'},
+];
+const CW_ROWS = 19, CW_COLS = 10;
+
+function buildCWGrid() {
+  const g = Array.from({length:CW_ROWS}, ()=>Array.from({length:CW_COLS}, ()=>({active:false,letter:'',num:null})));
+  for (const {n,dir,r,c,w} of cwWords) {
+    for (let i=0;i<w.length;i++) {
+      const row = dir==='A'?r:r+i, col = dir==='A'?c+i:c;
+      g[row][col].active=true; g[row][col].letter=w[i];
+      if(i===0) g[row][col].num = n;
+    }
+  }
+  return g;
+}
+let CW_GRID; // кэш сетки — заполняется в DOMContentLoaded
+
+function renderCW() {
+  CW_GRID = buildCWGrid();
+  const tbl = document.getElementById('cwTable');
+  tbl.innerHTML = '';
+  for (let r=0;r<CW_ROWS;r++) {
+    const tr = document.createElement('tr');
+    for (let c=0;c<CW_COLS;c++) {
+      const td = document.createElement('td');
+      const cell = CW_GRID[r][c];
+      if (cell.active) {
+        td.className='cw-cell';
+        if(cell.num){const sp=document.createElement('span');sp.className='cw-num';sp.textContent=cell.num;td.appendChild(sp);}
+        const inp=document.createElement('input');
+        inp.className='cw-input';inp.maxLength=1;
+        inp.dataset.r=r;inp.dataset.c=c;inp.autocomplete='off';
+        inp.addEventListener('input',function(){
+          this.value=this.value.toUpperCase().replace(/[^А-ЯЁA-Z]/g,'');
+          if(this.value) moveCWFocus(r,c,CW_GRID);
+        });
+        inp.addEventListener('keydown',function(e){
+          if(e.key==='Backspace'&&!this.value) moveCWFocusBack(r,c,CW_GRID);
+        });
+        td.appendChild(inp);
+      } else {
+        td.className='cw-black';
+      }
+      tr.appendChild(td);
+    }
+    tbl.appendChild(tr);
+  }
+}
+
+function getCWInput(r,c){ return document.querySelector(`.cw-input[data-r="${r}"][data-c="${c}"]`); }
+
+function moveCWFocus(r,c,g){
+  // find next active cell in same word direction
+  const right = c+1<CW_COLS && g[r][c+1]?.active ? getCWInput(r,c+1) : null;
+  const down = r+1<CW_ROWS && g[r+1]?.[c]?.active ? getCWInput(r+1,c) : null;
+  if(right) right.focus();
+  else if(down) down.focus();
+}
+function moveCWFocusBack(r,c,g){
+  const left = c-1>=0 && g[r][c-1]?.active ? getCWInput(r,c-1) : null;
+  const up = r-1>=0 && g[r-1]?.[c]?.active ? getCWInput(r-1,c) : null;
+  if(left) left.focus();
+  else if(up) up.focus();
+}
+
+function checkCW(){
+  let correct=0,total=0, mistakes=[];
+  for(const {n,dir,r,c,w} of cwWords){
+    let ok=true;
+    for(let i=0;i<w.length;i++){
+      const row=dir==='A'?r:r+i, col=dir==='A'?c+i:c;
+      const inp=getCWInput(row,col); total++;
+      if(inp.value.toUpperCase()===w[i]){correct++;inp.classList.remove('cw-wrong');inp.classList.add('cw-correct');}
+      else{ok=false;inp.classList.remove('cw-correct');inp.classList.add('cw-wrong');}
+    }
+    if(!ok) mistakes.push(`${n}${dir==='A'?'→':'↓'} ${w}`);
+  }
+  return {correct,total,mistakes};
+}
+
+// ════════════════════════════════════════════════
+//  DRAG & DROP (TASK 16)
+// ════════════════════════════════════════════════
+let dragEl=null;
+function dragStart(e){dragEl=e.currentTarget;}
+function dragOver(e){e.preventDefault();e.currentTarget.classList.add('drag-over');}
+function drop(e){
+  e.preventDefault();e.currentTarget.classList.remove('drag-over');
+  if(!dragEl||dragEl===e.currentTarget)return;
+  const list=document.getElementById('seqList');
+  const items=[...list.querySelectorAll('.seq-item')];
+  const fromIdx=items.indexOf(dragEl), toIdx=items.indexOf(e.currentTarget);
+  if(fromIdx<toIdx) list.insertBefore(dragEl, e.currentTarget.nextSibling);
+  else list.insertBefore(dragEl, e.currentTarget);
+  updateSeqNumbers();
+}
+document.addEventListener('dragend',()=>{document.querySelectorAll('.drag-over').forEach(el=>el.classList.remove('drag-over'));dragEl=null;});
+function updateSeqNumbers(){
+  const items=[...document.querySelectorAll('.seq-item')];
+  items.forEach((el,i)=>{el.querySelector('.seq-num').textContent=i+1;});
+}
+
+// ════════════════════════════════════════════════
+//  ERROR TEXT (TASK 14)
+// ════════════════════════════════════════════════
+function toggleSent(id) {
+  const el = document.getElementById(id);
+  el.classList.toggle('marked');
+}
+
+// ════════════════════════════════════════════════
+//  MC OPTION — выделение выбранного варианта
+// ════════════════════════════════════════════════
+document.querySelectorAll('.mc-option input').forEach(input => {
+  input.addEventListener('change', function() {
+    document.querySelectorAll(`input[name="${this.name}"]`).forEach(r => {
+      r.closest('.mc-option').classList.toggle('selected', r.checked);
+    });
+  });
+});
+
+// ════════════════════════════════════════════════
+//  ANSWER KEY
+// ════════════════════════════════════════════════
+const ANS = {
+  s1:'yes',s2:'no',s3:'yes',s4:'no',s5:'yes',s6:'yes',s7:'no',
+  mc2:'c',mc3:'b',mc4:'b',mc5:'b',mc6:'b',mc7:'b',mc8:'c',
+  b1:'церковь',b2:'секта',b3:'деноминация',b4:'клир',b5:'секуляризация',
+  m10_1:'B',m10_2:'A',m10_3:'C',m10_4:'D',
+  m11_1:'B',m11_2:'E',m11_3:'D',m11_4:'A',m11_5:'C',
+  m12_1:'C',m12_2:'B',m12_3:'A',m12_4:'D',m12_5:'E',
+  mc13:'c',
+  err:[2,4,7],
+  cl1:'A',cl2:'B',cl3:'C',cl4:'D',cl5:'A',
+  seq:['cult','sect','denom','church'],
+  c1:'христианство',c2:'ислам',c3:'буддизм',c4:'этноса',c5:'открытости',
+  r18_1:'no',r18_2:'yes',r18_3:'no',r18_4:'yes',r18_5:'yes',
+  f1:'F',f2:'D',f3:'A',f4:'E',f5:'C',f6:'B',
+};
+
+const EXPLAIN = {
+  s1:'Правильно — религия как социальный феномен обязательно предполагает группу верующих.',
+  s2:'Буддизм — нетеистическая религия (атеистическая или безбожная): в ней отсутствует вера в Бога.',
+  s3:'Правильно — четыре признака по Сорвину: социальная группа, священные предметы, система учений, ритуалы.',
+  s4:'Это характеристика деноминации. Секта, наоборот, является контркультурой и отвергает нормы общества.',
+  s5:'Правильно — секуляризация = утрата влияния религии.',
+  s6:'Правильно — деноминация промежуточная форма.',
+  s7:'К мировым религиям относятся только три: христианство, ислам, буддизм. Иудаизм — не мировая религия.',
+  mc2:'Вера в сверхъестественное вызвала дискуссию: против выступил Дюркгейм — «сверхъестественное» определяется через «естественное», что нарушает мировоззренческую нейтральность.',
+  mc3:'Дюркгейм считал интегративную функцию важнейшей: ритуалы создают эмоциональную солидарность.',
+  mc4:'Принципиальное отличие — отношение к обществу: церковь принимает его нормы; секта — контркультура.',
+  mc5:'Усиление роли религии в образовании — фактор противодействия секуляризации, а не её фактор.',
+  mc6:'Три критерия мировой религии: массовость, распространённость по всему миру, открытость.',
+  mc7:'«Религия — опиум народа» — иллюзорное счастье, маскирующее реальные проблемы (Маркс).',
+  mc8:'Деноминация не отвергает господствующих норм — субкультура, а не контркультура.',
+  m10:'Церковь→Б; Секта→А; Деноминация→В; Культ→Г',
+  m11:'Интегративная→Б; Сохранения опыта→Д; Соц. контроля→Г; Инновационная→А; Психологическая→В',
+  m12:'Секуляризация→В; Экуменизм→Б; Модернизация→А; Клир→Г; Харизма→Д',
+  mc13:'Лишнее: Семья — базовый социальный институт, а не тип религиозной организации.',
+  err:'Ошибки: (2) характеристика секты, не церкви; (4) деноминация — между сектой и ЦЕРКОВЬЮ, не государством; (7) принадлежность к секте — ДОСТИГАЕМЫЙ статус, крещение во ВЗРОСЛОМ возрасте.',
+  cl:'Церковь(1)→А; Секта(2)→Б; Деноминация(3)→В; Культ(4)→Г; Церковь(5)→А',
+  seq:'Правильный порядок: 1. Культ → 2. Секта → 3. Деноминация → 4. Церковь',
+  r18_1:'Самая многочисленная — христианство (~2,1 млрд). Буддизм — наименьшая (~0,37 млрд).',
+  r18_2:'Правильно — христианство, ислам и иудаизм восходят к Аврааму.',
+  r18_3:'Ислам возник в VII в. н.э., христианство — в I–II вв. н.э. Христианство старше.',
+  r18_4:'Правильно — индуизм сосредоточен в районе Индостана и не соответствует критерию распространённости.',
+  r18_5:'Правильно — лютеранство: церковь в Германии, деноминация в США.',
+  f:'(1) Психологическая; (2) Политическая; (3) Интегративная; (4) Инновационная; (5) Соц. контроля; (6) Сохранения опыта',
+};
+
+// ════════════════════════════════════════════════
+//  HELPERS
+// ════════════════════════════════════════════════
+function blankMatch(typed, correct) {
+  const v = typed.toLowerCase().trim();
+  return v === correct || (v.length >= 4 && v.includes(correct.slice(0, 4)));
+}
+
+// Подсветка применяется ТОЛЬКО после нажатия «Проверить»
+function chkOk(el)  { el.classList.remove('chk-bad'); el.classList.add('chk-ok'); }
+function chkBad(el) { el.classList.remove('chk-ok');  el.classList.add('chk-bad'); }
+
+// ════════════════════════════════════════════════
+//  CHECK ALL — запускается кнопкой «Проверить»
+//  После проверки автоматически отправляет в GAS
+// ════════════════════════════════════════════════
+async function checkAll() {
+  let pts = 0, max = 0;
+  const fb = [];
+
+  // ── Подсветка Да/Нет строки ──
+  function markYN(name, correct) {
+    document.querySelectorAll(`input[name="${name}"]`).forEach(inp => {
+      if (inp.checked) {
+        const row = inp.closest('.stmt-item');
+        if (row) (inp.value === correct ? chkOk : chkBad)(row);
+      }
+    });
+  }
+
+  // ── Подсветка MC варианта ──
+  function markMC(name, correct) {
+    document.querySelectorAll(`input[name="${name}"]`).forEach(inp => {
+      const lbl = inp.closest('.mc-option');
+      if (!lbl) return;
+      if (inp.checked) (inp.value === correct ? chkOk : chkBad)(lbl);
+    });
+  }
+
+  // ── Подсветка select строки ──
+  function markSel(id, correct, parentSel) {
+    const el = document.getElementById(id);
+    if (!el || !el.value) return;
+    const target = parentSel ? el.closest(parentSel) : el;
+    if (target) (el.value === correct ? chkOk : chkBad)(target);
+  }
+
+  // ── Подсветка текстового пропуска ──
+  function markBlank(id, correct) {
+    const el = document.getElementById(id);
+    if (!el || !el.value) return;
+    (blankMatch(el.value, correct) ? chkOk : chkBad)(el);
+  }
+
+  // ── T1 Да/Нет ──
+  const t1keys = ['s1','s2','s3','s4','s5','s6','s7'];
+  const t1res  = t1keys.map(k => {
+    const v = document.querySelector(`input[name="${k}"]:checked`)?.value || '';
+    markYN(k, ANS[k]);
+    return v === ANS[k];
+  });
+  const t1pts = t1res.filter(Boolean).length;
+  pts += t1pts; max += 7;
+  fb.push({ ok: t1pts === 7, partial: t1pts, total: 7,
+    label: 'Задание 1: «Да» или «Нет»',
+    explain: t1pts === 7 ? '' :
+      t1keys.filter((_,i) => !t1res[i]).map(k => '• ' + EXPLAIN[k]).join('\n') });
+
+  // ── T2–T8 MC ──
+  [2,3,4,5,6,7,8].forEach(n => {
+    const v  = document.querySelector(`input[name="mc${n}"]:checked`)?.value || '';
+    const ok = v === ANS[`mc${n}`];
+    markMC(`mc${n}`, ANS[`mc${n}`]);
+    max++; if (ok) pts++;
+    fb.push({ ok, label: `Задание ${n}`, explain: ok ? '' : EXPLAIN[`mc${n}`] });
+  });
+
+  // ── T9 Пропуски ──
+  const t9keys = ['b1','b2','b3','b4','b5'];
+  let t9pts = 0;
+  t9keys.forEach(k => {
+    const v = (document.getElementById(k)?.value || '').toLowerCase().trim();
+    const ok = blankMatch(v, ANS[k]);
+    markBlank(k, ANS[k]);
+    if (ok) t9pts++;
+  });
+  pts += t9pts; max += 5;
+  fb.push({ ok: t9pts === 5, partial: t9pts, total: 5,
+    label: 'Задание 9: заполните пропуски',
+    explain: t9pts === 5 ? '' : 'Правильные ответы: (1) церковь, (2) секта, (3) деноминация, (4) клир, (5) секуляризация' });
+
+  // ── T10 Соотнесение ──
+  const t10keys = ['m10_1','m10_2','m10_3','m10_4'];
+  let t10pts = 0;
+  t10keys.forEach(k => {
+    const ok = document.getElementById(k)?.value === ANS[k];
+    markSel(k, ANS[k], '.match-row');
+    if (ok) t10pts++;
+  });
+  pts += t10pts; max += 4;
+  fb.push({ ok: t10pts === 4, partial: t10pts, total: 4,
+    label: 'Задание 10: типы религиозных организаций',
+    explain: t10pts === 4 ? '' : EXPLAIN.m10 });
+
+  // ── T11 Соотнесение ──
+  const t11keys = ['m11_1','m11_2','m11_3','m11_4','m11_5'];
+  let t11pts = 0;
+  t11keys.forEach(k => {
+    const ok = document.getElementById(k)?.value === ANS[k];
+    markSel(k, ANS[k], '.match-row');
+    if (ok) t11pts++;
+  });
+  pts += t11pts; max += 5;
+  fb.push({ ok: t11pts === 5, partial: t11pts, total: 5,
+    label: 'Задание 11: функции религии — примеры',
+    explain: t11pts === 5 ? '' : EXPLAIN.m11 });
+
+  // ── T12 Соотнесение ──
+  const t12keys = ['m12_1','m12_2','m12_3','m12_4','m12_5'];
+  let t12pts = 0;
+  t12keys.forEach(k => {
+    const ok = document.getElementById(k)?.value === ANS[k];
+    markSel(k, ANS[k], '.match-row');
+    if (ok) t12pts++;
+  });
+  pts += t12pts; max += 5;
+  fb.push({ ok: t12pts === 5, partial: t12pts, total: 5,
+    label: 'Задание 12: понятие — определение',
+    explain: t12pts === 5 ? '' : EXPLAIN.m12 });
+
+  // ── T13 Лишнее ──
+  const mc13v = document.querySelector('input[name="mc13"]:checked')?.value || '';
+  const ok13  = mc13v === ANS.mc13;
+  markMC('mc13', ANS.mc13);
+  max++; if (ok13) pts++;
+  fb.push({ ok: ok13, label: 'Задание 13: найди лишнее',
+    explain: ok13 ? '' : EXPLAIN.mc13 });
+
+  // ── T14 Ошибки в тексте ──
+  const marked  = new Set([...document.querySelectorAll('.sentence.marked')].map(el => +el.dataset.n));
+  const errAns  = new Set(ANS.err);
+  const errHit  = [...errAns].filter(n => marked.has(n)).length;
+  const errWrong= [...marked].filter(n => !errAns.has(n)).length;
+  pts += Math.min(Math.max(0, errHit - errWrong), 3); max += 3;
+  // подсветка предложений
+  document.querySelectorAll('.sentence').forEach(el => {
+    const n = +el.dataset.n;
+    const isErr    = errAns.has(n);
+    const isMarked = marked.has(n);
+    if (isErr && isMarked)   chkOk(el);   // правильно отмечена ошибка
+    else if (isErr)           chkBad(el);  // пропущена ошибка — красный
+    else if (!isErr && isMarked) chkBad(el); // ошибочно отмечена — красный
+  });
+  fb.push({ ok: errHit === 3 && errWrong === 0, partial: errHit, total: 3,
+    label: 'Задание 14: найди ошибки в тексте',
+    explain: (errHit === 3 && errWrong === 0) ? '' : EXPLAIN.err });
+
+  // ── T15 Классификация ──
+  const t15keys = ['cl1','cl2','cl3','cl4','cl5'];
+  let t15pts = 0;
+  t15keys.forEach(k => {
+    const ok = document.getElementById(k)?.value === ANS[k];
+    markSel(k, ANS[k], '.classify-row');
+    if (ok) t15pts++;
+  });
+  pts += t15pts; max += 5;
+  fb.push({ ok: t15pts === 5, partial: t15pts, total: 5,
+    label: 'Задание 15: классификация организаций',
+    explain: t15pts === 5 ? '' : EXPLAIN.cl });
+
+  // ── T16 Последовательность ──
+  const seqItems = [...document.querySelectorAll('.seq-item')].map(el => el.dataset.val);
+  const seqOk   = JSON.stringify(seqItems) === JSON.stringify(ANS.seq);
+  const seqPts  = seqOk ? 4 : seqItems.filter((v,i) => v === ANS.seq[i]).length;
+  document.querySelectorAll('.seq-item').forEach((el,i) =>
+    (el.dataset.val === ANS.seq[i] ? chkOk : chkBad)(el));
+  pts += seqPts; max += 4;
+  fb.push({ ok: seqOk, partial: seqPts, total: 4,
+    label: 'Задание 16: последовательность эволюции',
+    explain: seqOk ? '' : EXPLAIN.seq });
+
+  // ── T17 Пропуски ──
+  const t17keys = ['c1','c2','c3','c4','c5'];
+  const t17ans  = ['христианство','ислам','буддизм','этноса','открытости'];
+  let t17pts = 0;
+  t17keys.forEach((k,i) => {
+    const v  = (document.getElementById(k)?.value || '').toLowerCase().trim();
+    const ok = blankMatch(v, t17ans[i]);
+    markBlank(k, t17ans[i]);
+    if (ok) t17pts++;
+  });
+  pts += t17pts; max += 5;
+  fb.push({ ok: t17pts === 5, partial: t17pts, total: 5,
+    label: 'Задание 17: мировые религии — пропуски',
+    explain: t17pts === 5 ? '' : 'Правильные ответы: (1) христианство, (2) ислам, (3) буддизм, (4) этноса, (5) открытости' });
+
+  // ── T18 Да/Нет ──
+  const t18keys = ['r18_1','r18_2','r18_3','r18_4','r18_5'];
+  let t18pts = 0;
+  const t18wrong = [];
+  t18keys.forEach(k => {
+    const v  = document.querySelector(`input[name="${k}"]:checked`)?.value || '';
+    const ok = v === ANS[k];
+    markYN(k, ANS[k]);
+    if (ok) t18pts++; else t18wrong.push('• ' + EXPLAIN[k]);
+  });
+  pts += t18pts; max += 5;
+  fb.push({ ok: t18pts === 5, partial: t18pts, total: 5,
+    label: 'Задание 18: «Да» или «Нет» — мировые религии',
+    explain: t18pts === 5 ? '' : t18wrong.join('\n') });
+
+  // ── T19 Функции ──
+  const t19keys = ['f1','f2','f3','f4','f5','f6'];
+  let t19pts = 0;
+  t19keys.forEach(k => {
+    const ok = document.getElementById(k)?.value === ANS[k];
+    markSel(k, ANS[k], '.classify-row');
+    if (ok) t19pts++;
+  });
+  pts += t19pts; max += 6;
+  fb.push({ ok: t19pts === 6, partial: t19pts, total: 6,
+    label: 'Задание 19: определи функцию религии',
+    explain: t19pts === 6 ? '' : EXPLAIN.f });
+
+  // ── T20 Кроссворд ──
+  const cw = checkCW();
+  pts += cw.correct; max += cw.total;
+  fb.push({ ok: cw.correct === cw.total, partial: cw.correct, total: cw.total,
+    label: 'Задание 20: кроссворд',
+    explain: cw.correct === cw.total ? '' : 'Неверные клетки выделены красным.' });
+
+  // ══ ПОКАЗ РЕЗУЛЬТАТОВ ══
+  const pct   = Math.round(pts / max * 100);
+  const grade = pct >= 90 ? 'Отлично!' : pct >= 75 ? 'Хорошо' : pct >= 60 ? 'Зачёт' : pct >= 40 ? 'Ещё учить' : 'Не сдано';
+  document.getElementById('resPct').textContent  = pct + '%';
+  document.getElementById('resPts').textContent  = `${pts} / ${max} баллов`;
+  document.getElementById('resGrade').textContent = grade;
+
+  const list = document.getElementById('feedbackList');
+  list.innerHTML = '';
+  fb.forEach(item => {
+    const div = document.createElement('div');
+    div.className = `fb-item ${item.ok ? 'ok' : 'bad'}`;
+    const commentHtml = (!item.ok && item.explain)
+      ? `<div class="wrong-comment show">${item.explain.replace(/\n/g,'<br>')}</div>`
+      : '';
+    div.innerHTML = `
+      <div class="fb-icon">${item.ok ? '✅' : '❌'}</div>
+      <div class="fb-content">
+        <div class="fb-title ${item.ok ? 'ok' : 'bad'}">
+          ${item.label}${item.partial !== undefined ? ` — ${item.partial}/${item.total}` : ''}
+        </div>
+        ${commentHtml}
+      </div>`;
+    list.appendChild(div);
+  });
+
+  document.getElementById('results').style.display = 'block';
+  document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+  window._lastResult = { pts, max, pct, fb };
+
+  // ── Автоматическая отправка учителю ──
+  await sendToSheets(pts, max, pct, fb);
+}
+
+// ════════════════════════════════════════════════
+//  ОТПРАВКА В GOOGLE SHEETS
+//  Ключевой fix: Content-Type: text/plain
+//  (избегаем CORS preflight, который блокировал JSON)
+// ════════════════════════════════════════════════
+
+// ► Вставьте URL вашего Google Apps Script Web App:
+const SHEETS_URL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID_HERE/exec';
+
+async function sendToSheets(pts, max, pct, fb) {
+  const msgEl = document.getElementById('sendMsg');
+  if (!SHEETS_URL || SHEETS_URL.includes('YOUR_SCRIPT_ID')) return;
+
+  msgEl.textContent = '⏳ Отправка результатов учителю...';
+  msgEl.style.display = 'block';
+
+  const name = document.getElementById('stu-name').value.trim() || '—';
+  const cls  = document.getElementById('stu-class').value.trim() || '—';
+
+  // Собираем ответы
+  const gv = n => document.querySelector(`input[name="${n}"]:checked`)?.value || '';
+  const sv = id => document.getElementById(id)?.value || '';
+
+  let cwOk = 0, cwTot = 0;
+  cwWords.forEach(({dir,r,c,w}) => {
+    for(let i=0;i<w.length;i++){
+      const row=dir==='A'?r:r+i, col=dir==='A'?c+i:c;
+      const inp=document.querySelector(`.cw-input[data-r="${row}"][data-c="${col}"]`);
+      if(inp){ cwTot++; if(inp.value.toUpperCase()===w[i]) cwOk++; }
+    }
+  });
+
+  const payload = {
+    timestamp : new Date().toLocaleString('ru-RU'),
+    name, cls,
+    score     : pts,
+    outOf     : max,
+    percent   : pct + '%',
+    // Ответы по заданиям
+    t1  : ['s1','s2','s3','s4','s5','s6','s7'].map(gv).join(';'),
+    t2:gv('mc2'), t3:gv('mc3'), t4:gv('mc4'), t5:gv('mc5'),
+    t6:gv('mc6'), t7:gv('mc7'), t8:gv('mc8'),
+    t9  : ['b1','b2','b3','b4','b5'].map(sv).join(';'),
+    t10 : ['m10_1','m10_2','m10_3','m10_4'].map(sv).join(';'),
+    t11 : ['m11_1','m11_2','m11_3','m11_4','m11_5'].map(sv).join(';'),
+    t12 : ['m12_1','m12_2','m12_3','m12_4','m12_5'].map(sv).join(';'),
+    t13 : gv('mc13'),
+    t14 : [...document.querySelectorAll('.sentence.marked')].map(e=>e.dataset.n).join(';'),
+    t15 : ['cl1','cl2','cl3','cl4','cl5'].map(sv).join(';'),
+    t16 : [...document.querySelectorAll('.seq-item')].map(e=>e.dataset.val).join(';'),
+    t17 : ['c1','c2','c3','c4','c5'].map(sv).join(';'),
+    t18 : ['r18_1','r18_2','r18_3','r18_4','r18_5'].map(gv).join(';'),
+    t19 : ['f1','f2','f3','f4','f5','f6'].map(sv).join(';'),
+    t20 : `${cwOk}/${cwTot}`,
+    // Итог по заданиям
+    summary: (fb || []).map(item =>
+      `${item.label}: ${item.ok ? '✓' : '✗'}${item.partial !== undefined ? ' ('+item.partial+'/'+item.total+')' : ''}`
+    ).join(' | '),
+  };
+
+  try {
+    // ВАЖНО: text/plain не вызывает CORS preflight — это ключ к работе GAS
+    await fetch(SHEETS_URL, {
+      method  : 'POST',
+      mode    : 'no-cors',
+      headers : { 'Content-Type': 'text/plain' },
+      body    : JSON.stringify(payload),
+    });
+    msgEl.textContent = '✅ Результаты отправлены учителю!';
+    setTimeout(() => { msgEl.style.display = 'none'; }, 6000);
+  } catch (e) {
+    msgEl.textContent = '⚠️ Не удалось отправить. Проверьте соединение или URL скрипта.';
+    msgEl.style.color = '#dc2626';
+  }
+}
+
+// ════════════════════════════════════════════════
+//  INIT
+// ════════════════════════════════════════════════
+document.addEventListener('DOMContentLoaded', () => {
+  CW_GRID = buildCWGrid();
+  renderCW();
+  updateSeqNumbers();
+});
+</script>
+
+</body>
+</html>
